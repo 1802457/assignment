@@ -1,0 +1,53 @@
+Ques 1:- Prime number or not:- 
+function test_prime(n)
+{
+
+  if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
+console.log(test_prime(37));
+
+
+
+Ques2:- Program to find difference between next prime number and given number:-
+function next_Prime_num(num) {
+    for (var i = num + 1;; i++) {
+        var isPrime = true;
+        for (var d = 2; d * d <= i; d++) {
+            if (i % d === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            return i;
+        }
+    }
+}
+var n= 101;
+var x = next_Prime_num(n);
+console.log(x-n);
+
+Ques 3:- Explain Jwt in approx. and it’s benefits.
+A JSON web token(JWT) is JSON Object which is used to securely transfer information over the web(between two parties). It can be used for an authentication system and can also be used for information exchange.The token is mainly composed of header, payload, signature. These three parts are separated by dots(.). JWT defines the structure of information we are sending from one party to the another, and it comes in two forms – Serialized, Deserialized. 
+The Serialized approach is mainly used to transfer the data through the network with each request and response. While the deserialized approach is used to read and write data to the web token. 
+There are benefits to using JWTs when compared to simple web tokens (SWTs) and Security Assertion Markup Language (SAML) tokens are as:-
+	More compact,
+	More secure,
+	Easier to process.
